@@ -7,7 +7,7 @@ Type TEntity
 
 	Field _position:TPosition
 	Field _renderLayer:Int
-	field _groupName:String
+	Field _groupName:String
 	Field _manager:TEntityManager
 
 
@@ -54,14 +54,14 @@ Type TEntity
 
 
 	'updates position of this entity and calls user hook method.
-	Method Update() final
+	Method Update() Final
 		_position.Update()
 		Self.UpdateEntity()
 	End Method
 
 
 	'renders entity and calls user hook method.
-	Method Render(tween:Double) final
+	Method Render(tween:Double) Final
 		_position.Interpolate(tween)
 		Self.RenderEntity()
 	End Method
@@ -73,7 +73,7 @@ Type TEntity
 		returns: 
 	EndRem
 	Method GetPositionX:Float()
-		return _position.GetX()
+		Return _position.GetX()
 	EndMethod
 	
 
@@ -157,7 +157,7 @@ Rem
 	about:   
 	returns: Float
 EndRem
-Function EntityY:float (e:TEntity)
+Function EntityY:Float (e:TEntity)
 	Return e.GetPosition().GetY()
 EndFunction
 
@@ -167,8 +167,8 @@ Rem
 	about:   
 	returns: 
 EndRem
-Function SetEntityX:Float(e:TEntity, x:Float )
-	Return e.GetPosition().SetX( x )
+Function SetEntityX(e:TEntity, x:Float )
+	e.GetPosition().SetX( x )
 End Function
 
 
@@ -178,8 +178,8 @@ Rem
 	about:   
 	returns: 
 EndRem
-Function SetEntityY:float ( e:TEntity, y:Float )
-	Return e.GetPosition().SetY( y )
+Function SetEntityY( e:TEntity, y:Float )
+	e.GetPosition().SetY( y )
 EndFunction
 
 
@@ -216,7 +216,7 @@ EndRem
 Function EntityTraveled:TVector2D( e:TEntity )
 	Local v:TVector2D = e.GetPosition().Get().Clone()
 	v.SubstractV(e.GetPosition().GetPrevious())
-	return v	
+	Return v	
 EndFunction
 
 
